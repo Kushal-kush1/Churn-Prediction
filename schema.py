@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 
 class CustomerData(BaseModel):
+    CustomerID:str
     CreditScore:float
     Geography:str
     Gender:str
