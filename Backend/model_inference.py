@@ -37,6 +37,21 @@ def predict_churn(data):
     shap_values = explainer.shap_values(transformed_data)
 
     feature_names = model.named_steps['preprocess'].get_feature_names_out()
+
+    clean_feature_names = []
+
+    for name in feature_names:
+
+        clean_name = (
+            name.replace('scaler__', '')
+                .replace('encoder__', '')
+                .replace('enocder__', '')
+                .replace('bin__', '')
+        )
+
+        clean_feature_names.append(clean_name)
+
+    feature_names = clean_feature_names
     
 
     # RESULT
