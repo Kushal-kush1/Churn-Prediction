@@ -1,5 +1,4 @@
 import joblib
-#import numpy as np
 import pandas as pd 
 #from feature_engineering import feature_eng
 import shap
@@ -38,6 +37,7 @@ def predict_churn(data):
     shap_values = explainer.shap_values(transformed_data)
 
     feature_names = model.named_steps['preprocess'].get_feature_names_out()
+    
 
     # RESULT
 
@@ -64,9 +64,8 @@ def predict_churn(data):
             for row in feature:
                 insights.append(f"{row} increased churn tendency")
 
-            results.append
-            ({
-            "CustomerID": int(customer_ids.iloc[i]),
+            results.append({
+            "CustomerID": customer_ids.iloc[i],
             "Prediction":"Churn",
             "Probability":f"{prob[1]*100:.2f}%",
             "Top Factors": insights
@@ -78,12 +77,11 @@ def predict_churn(data):
             for row in feature:
                 insights.append(f"{row} reduced churn tendency")
 
-            results.append
-            ({
-            "CustomerID": int(customer_ids.iloc[i]),
-            "Prediction":"Not Churn",
-            "Probability":f"{prob[0]*100:.2f}%",
-            "Top Factors": insights
-            })
+            results.append({
+                    "CustomerID": customer_ids.iloc[i],
+                    "Prediction":"Not Churn",
+                    "Probability":f"{prob[0]*100:.2f}%",
+                    "Top Factors": insights
+                    })
 
     return results
