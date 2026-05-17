@@ -198,7 +198,7 @@ elif page == "Prediction":
 
         #API URL 
 
-        url = "http://127.0.0.1:8000/predict"
+        url = "https://churn-prediction-wl34.onrender.com/predict"
 
         response = requests.post(
             url,
