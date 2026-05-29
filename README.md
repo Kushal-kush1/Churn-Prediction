@@ -362,16 +362,17 @@ POST /predict
 CHURN_PREDICTION/
 │
 ├── Backend/
-│   ├── api.py
-│   ├── model_inference.py
+│   ├── __init__.py
 │   ├── feature_engineering.py
+│   ├── main.py
+│   ├── model_inference.py
+│   ├── requirements_backend.txt
 │   ├── schema.py
 │   ├── XGB_model.pkl
-│   ├── requirements_backend.txt
 │
 ├── Frontend/
-│   ├── streamlit_app.py
-│   ├── requirements_streamlit.txt
+│   ├── streamlit_ui.py
+│   ├── requirements.txt
 │
 ├── Notebook/
 │   ├── churn_pred.ipynb
@@ -426,9 +427,3 @@ Aspiring Data Scientist with strong interest in:
 
 ### GitHub
 https://github.com/Kushal-kush1
-
----
-
-# ⭐ If you found this project useful
-
-Consider giving the repository a star ⭐
