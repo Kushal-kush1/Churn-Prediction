@@ -6,11 +6,7 @@ venv/
 venv
 **/venv
 .ipynb_checkpoints/
-# We keep the essential CSV,ignore raw/heavy datasets
 
-!Churn_Modelling.csv
-
-*.csv
 .tar
 .vscode/
 .idea/

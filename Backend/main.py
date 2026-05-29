@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from schema import CustomerData
+from Backend.schema import CustomerData
 from typing import List
-from model_inference import predict_churn
+from Backend.model_inference import predict_churn
 
 
 app=FastAPI(title='Banking Churn Prediction API', 
